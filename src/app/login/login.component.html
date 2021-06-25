@@ -1,0 +1,25 @@
+<div class="container justify-content-center ">
+  <form [formGroup]="loginForm">
+    <div class="card text-center">
+      <div class="card-header">
+        Login
+      </div>
+      <div class="card-body">
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" formControlName="email">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroups-sizing-sm">Password</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroups-sizing-sm" formControlName="password">
+        </div>
+        <button class="btn" style="background-color: #33a76d; color: white" (click)="login()">Login</button>
+        <button class="btn btn-outline-dark" style="margin-left: 10px" (click)="goRegister()">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>

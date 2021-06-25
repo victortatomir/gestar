@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white">
+  <div class="container-fluid">
+    <a class="navbar-brand me-2" href="/" style="font-weight: bold;">
+      Gestar<span style="color: #33a76d">Medica</span>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Acasa</a>
+        </li>
+        <li class="nav-item" >
+          <a *ngIf="isDoctor()" class="nav-link" href="/schedule">Programari</a>
+        </li>
+        <li class="nav-item" >
+          <a *ngIf="!isDoctor() && isLoogedIn()" class="nav-link" href="/consult">Consultatie</a>
+        </li>
+        <li class="nav-item" *ngIf="!isLoogedIn()">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+      </ul>
+    </div>
+    <div class="d-flex">
+      <button *ngIf="isLoogedIn()" class="btn btn-primary" style="background-color: #33a76d" (click)="logOut()">Logout</button>
+    </div>
+    <div>
+
+    </div>
+  </div>
+</nav>
+

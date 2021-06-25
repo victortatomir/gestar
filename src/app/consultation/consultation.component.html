@@ -1,0 +1,5 @@
+<div *ngIf="consult" class="container">
+  <p>Name: {{consult.user.name}}</p>
+  <p style="color: green" *ngIf="isAccepted() === true">Ai fost acceptat in data de {{myDate}}</p>
+  <p style="color: red" *ngIf="isAccepted() === false">Nu ai fost acceptat inca</p>
+</div>
