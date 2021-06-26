@@ -1,5 +1,5 @@
 export default class Address {
-  id: number;
+  id?: number;
   country: string;
   region: string;
   city: string;

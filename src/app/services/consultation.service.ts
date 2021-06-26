@@ -14,8 +14,8 @@ export class ConsultationService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
-  getUser(id: number): Observable<Consult>{
-    return this.http.get<Consult>(this.REST_SERVER + `/id?consultId=${id}`);
+  getUser(id: number, isUpcoming: boolean): Observable<Consult[]>{
+    return this.http.get<Consult[]>(this.REST_SERVER + `/user?userId=${id}&isUpcomingConsult=${isUpcoming}`);
   }
 
   getConsults(): Observable<Consult[]> {

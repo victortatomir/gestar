@@ -32,8 +32,10 @@ export class ScheduleComponent implements OnInit {
       (Number(this.form.get('timeForm').value.substring(0, 2)) * 60 * 60 * 1000) +
       (Number(this.form.get('timeForm').value.substring(3, 5)) * 60 * 1000);
     const consult: Consult = { user: this.form.get('user').value, accepted: false, date: milliseconds};
-    this.consultService.addConsult(consult).pipe().subscribe();
-    this.router.navigateByUrl('/schedule');
+    this.consultService.addConsult(consult).pipe().subscribe(() => {
+      alert('Consultatie adaugata');
+      this.router.navigateByUrl('/');
+    });
   }
 
 }

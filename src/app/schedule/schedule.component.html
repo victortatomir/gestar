@@ -20,9 +20,11 @@
       <mat-form-field appearance="fill">
         <mat-label>Persoana</mat-label>
         <mat-select formControlName="user">
-          <mat-option *ngFor="let cat of users" [value]="cat">
-            {{cat.name}}
-          </mat-option>
+          <ng-container *ngFor="let cat of users">
+            <mat-option  [value]="cat">
+              {{cat.name}}
+            </mat-option>
+          </ng-container>
         </mat-select>
       </mat-form-field>
     </div>

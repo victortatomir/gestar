@@ -1,1 +1,65 @@
-<p>register works!</p>
+<div class="container justify-content-center ">
+  <form [formGroup]="registerForm">
+    <div class="card text-center">
+      <div class="card-header">
+        Register
+      </div>
+      <div class="card-body">
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" formControlName="email">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroups-sizing-sm">Password</span>
+          </div>
+          <input type="password" class="form-control" aria-label="Small" aria-describedby="inputGroups-sizing-sm" formControlName="password">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroups-sizing-sms">Nume</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroups-sizing-sms" formControlName="name">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroups-sizing-sma">Numar telefon</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroups-sizing-sma" formControlName="phone">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroups-sizing-smb">Strada</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroups-sizing-smb" formControlName="street">
+        </div><div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroups-sizing-smc">Oras</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroups-sizing-smc" formControlName="city">
+      </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroups-sizing-smd">Numar</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroups-sizing-smd" formControlName="number">
+        </div><div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroups-sizing-sme">Judet</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroups-sizing-sme" formControlName="region">
+      </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroups-sizing-smf">Tara</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroups-sizing-smf" formControlName="country">
+        </div>
+        <button class="btn" style="background-color: #33a76d; color: white" (click)="register()">Register</button>
+        <button class="btn btn-outline-dark" style="margin-left: 10px" (click)="login()">Login</button>
+      </div>
+    </div>
+  </form>
+</div>

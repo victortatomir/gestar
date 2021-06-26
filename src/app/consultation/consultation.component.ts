@@ -11,23 +11,40 @@ import {DatePipe} from '@angular/common';
 })
 export class ConsultationComponent implements OnInit {
 
-  consult: Consult;
+  consults: Consult[];
   myDate: any;
   constructor(private consultService: ConsultationService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
     if (localStorage.getItem('user')) {
       const user: User = JSON.parse(localStorage.getItem('user'));
-      this.consultService.getUser(user.id).subscribe((res) => {
-        this.consult = res;
-        console.log(res);
-        this.myDate = this.datePipe.transform(this.consult.date, 'dd-MM-yyyy');
+      this.consultService.getUser(user.id, true).subscribe((res) => {
+        this.consults = res;
       });
     }
   }
 
-  isAccepted(): boolean {
-    console.log(this.consult.accepted);
-    return this.consult.accepted;
+  showHistory(): void {
+    if (localStorage.getItem('user')) {
+      const user: User = JSON.parse(localStorage.getItem('user'));
+      this.consultService.getUser(user.id, false).subscribe((res) => {
+        this.consults = res;
+      });
+    }
   }
+
+  showUpcoming(): void {
+    if (localStorage.getItem('user')) {
+      const user: User = JSON.parse(localStorage.getItem('user'));
+      this.consultService.getUser(user.id, true).subscribe((res) => {
+        this.consults = res;
+      });
+    }
+  }
+
+  convertDate(date: number): string {
+    const myDate = new Date(date);
+    return myDate.toDateString();
+  }
+
 }

@@ -28,8 +28,7 @@ export class ShowScheduleComponent implements OnInit {
 
   updateConsult(consult: Consult): void {
     consult.accepted = true;
-    console.log(consult);
-    // this.consultService.
+    this.consultService.addConsult(consult).subscribe();
   }
   deleteConsult(id: number): void{
     this.consultService.deleteConsult(id).pipe().subscribe(() => {
